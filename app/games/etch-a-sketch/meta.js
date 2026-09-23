@@ -4,8 +4,8 @@ const meta = {
   title: "Etch A Sketch",
   difficulty: "easy", // "easy" | "medium" | "hard"
   issue: 44, // GitHub issue number holding the full spec
-  status: "unclaimed", // "unclaimed" | "in-progress" | "done"
-  author: null, // your name, e.g. "Jane Doe"
+  status: "done", // "unclaimed" | "in-progress" | "done"
+  author:"Fatma Mohamed and Andikonda Zulu" , // your name, e.g. "Jane Doe"
   github: null, // your GitHub handle, e.g. "janedoe"
   description: "Draw on a grid with directional controls; shake to clear.",
 };
