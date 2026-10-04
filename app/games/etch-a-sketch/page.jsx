@@ -145,41 +145,28 @@ export default function EtchASketch() {
   ];
 
   return (
-    <div className={`etch-toy ${isShaking ? 'shaking' : ''}`}>
-      <div className="etch-brand">Etch A Sketch</div>
-      <div className="etch-border">
-        <canvas ref={canvasRef} width="370" height="240" className="etch-canvas" />
-      </div>
-      <div className="etch-controls">
-        <div className="dpad">
-          {dpadButtons.map(({ direction, symbol, position }) => (
-            <button
-              key={direction}
-              className={`dpad-button dpad-button-${position}`}
-              onMouseDown={() => startDirection(direction)}
-              onMouseUp={() => stopDirection(direction)}
-              onMouseLeave={() => stopDirection(direction)}
-              onTouchStart={(e) => { e.preventDefault(); startDirection(direction); }}
-              onTouchEnd={() => stopDirection(direction)}
-            >
-              {symbol}
-            </button>
-          ))}
-        </div>
-        <button className="shake-button" onClick={handleShake}>
-          SHAKE TO ERASE
-        </button>
-        <div className="color-picker">
-          {colorOptions.map((color) => (
-            <div
-              key={color}
-              className={`color-option w-8 h-8 rounded-full cursor-pointer transition-transform hover:scale-110 active:scale-95 ${penColor === color ? 'ring-2 ring-pink-500 ring-offset-2 scale-110' : ''}`}
-              style={{ backgroundColor: color }}
-              onClick={() => setPenColor(color)}
-            />
-          ))}
-        </div>
-      </div>
+    <div className="mx-auto max-w-md py-12">
+      <Card>
+        <CardHeader>
+          <div className="flex items-center justify-between gap-2">
+            <CardTitle>Etch A Sketch</CardTitle>
+            <Badge variant="secondary">easy</Badge>
+          </div>
+        </CardHeader>
+        <CardContent className="text-muted-foreground space-y-4 text-sm">
+          <p className="text-foreground text-base">
+            {"Draw on a grid with directional controls; shake to clear."}
+          </p>
+          <p>🚧 This game hasn&apos;t been built yet.</p>
+          <p>
+            The full spec — objective, rules, required features and definition of done — lives in
+            issue #44. Claim it, then replace this file with your game.
+          </p>
+          <Button asChild variant="outline" size="sm">
+            <Link href={issueUrl(44)}>Read the full spec (issue #44)</Link>
+          </Button>
+        </CardContent>
+      </Card>
     </div>
   );
 }
